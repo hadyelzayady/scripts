@@ -1,0 +1,8 @@
+#!/bin/sh
+printf "project?:"
+read project
+printf "task:"
+read task
+printf "due(sod,eod,tomorrow)"
+read due
+task add project:$project $task due:$due

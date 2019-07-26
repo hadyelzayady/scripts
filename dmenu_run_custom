@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+dmenu_run -H ~/.dmenu_history -m 

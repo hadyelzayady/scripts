@@ -1,0 +1,19 @@
+#!/bin/bash
+offset=5%
+current_level=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))
+operation=$1 # L for lower volume, R for raise volume
+echo $operation
+echo $current_level
+if [ $operation == 'R' && $current_level == '100%' ];then
+exit 1;
+fi
+
+if [ $operation == 'L' && $current_level== '0%' ];then
+	exit 1;
+fi
+
+if [ $operation = 'L' ];then
+amixer set 'Master' 5%-
+else
+	amixer set 'Master' 5%+
+fi

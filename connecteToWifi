@@ -1,0 +1,9 @@
+#!/bin/sh
+
+nmcli dev wifi
+
+printf "wifi name: "
+read wifiname
+printf "password:"
+read password
+nmcli dev wifi connect "$wifiname" password "$password"

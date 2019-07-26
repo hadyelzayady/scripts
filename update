@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+sudo pacman -Syyuu 
+yay -Syyuu
+omf update
