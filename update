@@ -1,4 +1,4 @@
 #!/usr/bin/fish
-sudo pacman -Syyuu 
-yay -Syyuu
+sudo pacman -Syyuu --noconfirm
+yay -Syyuu --noconfirm
 omf update
