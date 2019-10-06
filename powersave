@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ -z "$1"]
+then
+	echo "no param passed ,pass on/off"
+	exit 1
+fi
+if [ $1 = "on" ]
+then
+	systemctl start tlp
+elif [ $1 = "off" ]
+then
+	systemctl stop tlp
+else
+	echo "unrecognized option choose on/off"
+fi
