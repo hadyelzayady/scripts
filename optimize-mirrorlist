@@ -1,0 +1,1 @@
+sudo reflector --verbose --score 200 -p http -p https --sort rate --save /etc/pacman.d/mirrorlist

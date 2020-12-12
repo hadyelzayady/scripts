@@ -1,0 +1,7 @@
+#!/bin/bash
+
+selectedText=$(xclip -out)
+translated=$(trans en:ar "$selectedText" -b | rev)
+echo $translated
+dunstify "$translated"
+

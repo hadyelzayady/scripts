@@ -39,5 +39,5 @@ i3lock \
 --keylayout 1         \
 \
 --veriftext="Drinking verification can..."  \
---wrongtext="YOU IDIOT!, back off"
-
+--wrongtext="YOU IDIOT!, Fuck off"
+--show-failed-attempts
