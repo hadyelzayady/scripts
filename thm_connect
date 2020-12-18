@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+scp /usr/share/terminfo/a/alacritty root@$1:/usr/share/terminfo/a/
+ssh root@$1
