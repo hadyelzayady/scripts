@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+DEFAULT_BASE_DIR="$HOME"
+base_dir=$DEFAULT_BASE_DIR
+
+[ ! -z "$1" ] && base_dir=$1
+
+repos=$(fd --ignore-file $HOME/.config/dgit/ignore -a --base-directory $base_dir -H -I -t d -0 "\.git$" -x  echo {//})
+
+while IFS= read -r repo; do
+  status=$(git -C $repo status --porcelain 2>/dev/null | cut -c2 | uniq | xargs)
+  [ ! -z "$status" ] && echo -e "$repo \t  [ $status ]"
+done <<< "$repos"
+
+
