@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[  "$1" = "" ] && echo "please provide the ip of the attackbox" && exit
+
+sudo umount ~/thm_attackbox 2>/dev/null
+
+if (( $? )) ; then
+  sudo sshfs -o allow_other,dev root@$1:/ ~/thm_attackbox/;
+else exit; fi

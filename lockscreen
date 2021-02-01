@@ -34,10 +34,10 @@ i3lock \
 --blur 8              \
 --clock               \
 --indicator           \
---timestr="%H:%M:%S"  \
+--timestr="%I:%M:%S %p"  \
 --datestr="%A, %d %m %Y" \
 --keylayout 1         \
 \
 --veriftext="Drinking verification can..."  \
---wrongtext="YOU IDIOT!, Fuck off"
+--wrongtext="YOU IDIOT!, Fuck off" \
 --show-failed-attempts

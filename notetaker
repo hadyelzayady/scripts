@@ -1,0 +1,9 @@
+#!/bin/sh
+# inspired from https://github.com/CalinLeafshade/dots/blob/master/bin/bin/notetaker
+noteFilename="$HOME/.local/share/notes/note.md"
+
+nvim -c "norm Go" \
+  -c "startinsert" $noteFilename \
+  -c "Goyo 100%x100%"
+
+
