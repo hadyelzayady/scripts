@@ -12,7 +12,7 @@ while IFS= read -r repo; do
   push_status=$(git -C $repo diff @{u})
   status2=""
   [ ! -z "$push_status" ] && status2="⇡"
-  [ ! -z "$status" ] && echo -e "$repo \t  [ $status $status2 ]"
+  [ ! -z "$status" ] || [ ! -z "$status2" ] && echo -e "$repo \t  [ $status $status2 ]"
 done <<< "$repos"
 
 
