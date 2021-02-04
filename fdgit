@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+lazygit -p $( dgit | fzf --height 40% --reverse | cut -d '[' -f1)
