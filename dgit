@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
-DEFAULT_BASE_DIR="$HOME"
-base_dir=$DEFAULT_BASE_DIR
+HOME="/home/geeker"
+DEFAULT_BASE_DIRS=("$HOME" "/etc")
+# base_dir=$DEFAULT_BASE_DIRS
 
-[ ! -z "$1" ] && base_dir=$1
+# [ ! -z "$1" ] && base_dir=$1
+for dir in ${DEFAULT_BASE_DIRS[@]}
+do
 
-repos=$(fd --ignore-file $HOME/.config/dgit/ignore -a --base-directory $base_dir -H -I -t d -0 "\.git$" -x  echo {//})
+repos=$(fd --ignore-file $HOME/.config/dgit/ignore -a --base-directory $dir -H -I -t d -0 "\.git$" -x  echo {//})
 
-while IFS= read -r repo; do
+while IFS= read -r repo && [ ! -z "$repos" ]; do
   status=$(git -C $repo status --porcelain 2>/dev/null | cut -c2 | uniq | xargs)
   push_status=$(git -C $repo diff @{u})
   status2=""
@@ -16,3 +19,4 @@ while IFS= read -r repo; do
 done <<< "$repos"
 
 
+done
