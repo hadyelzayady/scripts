@@ -1,4 +1,4 @@
 #!/bin/sh
 # Sets the background. If given an argument, will set file as background.
-#[ ! -z "$1" ] && cp "$1" ~/.config/$BG && notify-send -i "$HOME/.config/$BG" "Wallpaper changed."
-feh --bg-fill ~/.config/$BG
+[ ! -z "$1" ] && cp "$1" ~/.config/$BG && notify-send -i "$HOME/.config/$BG" "Wallpaper changed."
+feh  --no-fehbg --bg-fill ~/.config/$BG
