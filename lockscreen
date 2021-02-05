@@ -1,6 +1,4 @@
 #!/usr/bin/sh
-# i3lock -i ~/.config/lockimage.png -t
-#!/bin/sh
 
 B='#00000000'  # blank
 C='#ffffff22'  # clear ish
@@ -40,4 +38,3 @@ i3lock \
 \
 --veriftext="Drinking verification can..."  \
 --wrongtext="YOU IDIOT!, Fuck off" \
---show-failed-attempts
