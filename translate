@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# install translate-shell
 selectedText=$(xclip -out)
 translated=$(trans en:ar "$selectedText" -b | rev)
 echo $translated
