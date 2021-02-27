@@ -1,3 +1,7 @@
 #!/usr/bin/bash
 
-dgit | fzf --height 40% --reverse | cut -d '[' -f1 | xargs lazygit -p $1
+repo=$( dgit | fzf --height 40% --reverse  )
+
+[ -z "$repo" ] && exit
+
+echo $repo | cut -d '[' -f1 | xargs lazygit -p $1
