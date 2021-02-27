@@ -8,5 +8,5 @@ then
 else
 device_mac=$(echo $device | rev |  cut -d "(" -f 1 | rev | cut -d\) -f1)
 bt-device --set $device_mac Trusted 1
-bt-obex -p $device_mac $(cd $PWD && fzf)
+bt-obex -p $device_mac "$(cd $PWD && fzf)"
 fi
