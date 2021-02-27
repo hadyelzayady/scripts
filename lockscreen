@@ -28,7 +28,6 @@ i3lock \
 --keyhlcolor=$W       \
 --bshlcolor=$W        \
 \
---screen 1            \
 --blur 8              \
 --clock               \
 --indicator           \
@@ -38,3 +37,6 @@ i3lock \
 \
 --veriftext="Drinking verification can..."  \
 --wrongtext="YOU IDIOT!, Fuck off" \
+
+# --screen 1            \
+
