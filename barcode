@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+xclip -selection clip -t image/png -o > /tmp/clipboard.png && zbarimg -q --raw /tmp/clipboard.png
+

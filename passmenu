@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob globstar
+
+typeit=1
+if [[ $1 == "--notype" ]]; then
+	typeit=0
+	shift
+fi
+
+typestring(){
+	echo $1 | { IFS= read -r pass; printf %s "$pass"; } |
+			xdotool type --clearmodifiers --file -
+}
+
+
+prefix=${PASSWORD_STORE_DIR-~/.password-store}
+password_files=( "$prefix"/**/*.gpg )
+password_files=( "${password_files[@]#"$prefix"/}" )
+password_files=( "${password_files[@]%.gpg}" )
+
+password=$(printf '%s\n' "${password_files[@]}" | dmenu -i "$@")
+
+[[ -n $password ]] || exit
+
+PASSWORD_LABEL="password:XXXXX"
+option=$( echo -e "$PASSWORD_LABEL\n$(pass tail $password)" | dmenu -i "$@" )
+
+pass_cmd=show
+if pass show "$password" | grep -q '^otpauth://'; then
+    pass_cmd=otp
+fi
+http://www.alahlynet.com.eg
+
+case $option in
+	$PASSWORD_LABEL)
+		# copy it and also typeit
+		pass $pass_cmd -c "$password" 2>/dev/null
+		val=$( pass $pass_cmd "$password" )
+		;;
+	*)
+		val=$(echo $option | cut -d ":" -f2- | cut -d " " -f2-)
+		echo $val | xclip -selection clip
+		;;
+esac
+
+if [[ $typeit -eq 1 ]]; then
+	typestring $val
+fi
+
