@@ -12,6 +12,10 @@ i3lock \
 --ringvercolor=$V     \
 --radius=200  \
 \
+--pass-media-keys \
+--pass-screen-keys \
+--pass-volume-keys \
+\
 --insidewrongcolor=$C \
 --ringwrongcolor=$W   \
 \
