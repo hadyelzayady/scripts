@@ -10,8 +10,8 @@ do
 repos=$(fd --ignore-file $HOME/.config/dgit/ignore -a --base-directory $dir -H -I -t d -0 "\.git$" -x  echo {//})
 
 while IFS= read -r repo && [ ! -z "$repos" ]; do
-  status=$(git -C $repo status --porcelain 2>/dev/null | cut -c2 | uniq | xargs)
-  push_status=$(git -C $repo diff @{u})
+  status=$(git -C $repo status --porcelain 2>/dev/null | cut -c2 | uniq | xargs 2>/dev/null)
+  push_status=$(git -C $repo diff @{u} 2>/dev/null)
   status2=""
   [ ! -z "$push_status" ] && status2="⇡"
   [ ! -z "$status" ] || [ ! -z "$status2" ] && echo -e "$repo \t  [ $status $status2 ]"
