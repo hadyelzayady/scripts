@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+studyflash   "$1" "$FLASHCARDSDIR/$2"
