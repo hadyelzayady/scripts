@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
-repo=$( dgit | fzf --height 40% --reverse  )
+selected_repo=$( dgit | fzf --height 40% --reverse  )
 
-[ -z "$repo" ] && exit
+[ -z "$selected_repo" ] && exit
 
-echo $repo | cut -d '[' -f1 | xargs lazygit -p $1
+repo_path=$( echo $selected_repo | cut -d '[' -f1 )
+lazygit -p $repo_path
