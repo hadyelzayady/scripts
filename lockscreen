@@ -8,39 +8,39 @@ W='#880000bb'  # wrong
 V='#bb00bbbb'  # verifying
 
 i3lock \
---insidevercolor=$C   \
---ringvercolor=$V     \
+--insidever-color=$C   \
+--ringver-color=$V     \
 --radius=200  \
 \
 --pass-media-keys \
 --pass-screen-keys \
 --pass-volume-keys \
 \
---insidewrongcolor=$C \
---ringwrongcolor=$W   \
+--insidewrong-color=$C \
+--ringwrong-color=$W   \
 \
---insidecolor=$B      \
---ringcolor=$D        \
---linecolor=$B        \
---separatorcolor=$D   \
+--inside-color=$B      \
+--ring-color=$D        \
+--line-color=$B        \
+--separator-color=$D   \
 \
---verifcolor=$T        \
---wrongcolor=$T        \
---timecolor=$T        \
---datecolor=$T        \
---layoutcolor=$T      \
---keyhlcolor=$W       \
---bshlcolor=$W        \
+--verif-color=$T        \
+--wrong-color=$T        \
+--time-color=$T        \
+--date-color=$T        \
+--layout-color=$T      \
+--keyhl-color=$W       \
+--bshl-color=$W        \
 \
 --blur 8              \
 --clock               \
 --indicator           \
---timestr="%I:%M:%S %p"  \
---datestr="%A, %d %m %Y" \
+--time-str="%I:%M:%S %p"  \
+--date-str="%A, %d %m %Y" \
 --keylayout 1         \
 \
---veriftext="Drinking verification can..."  \
---wrongtext="YOU IDIOT!, Fuck off" \
+--verif-text="Drinking verification can..."  \
+--wrong-text="YOU IDIOT!, Fuck off" \
 
 # --screen 1            \
 
