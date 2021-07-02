@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+env GTK_THEME=Adwaita:light /usr/bin/firefox
+
