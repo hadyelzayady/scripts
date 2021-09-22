@@ -1,0 +1,11 @@
+#!/bin/bash
+
+[  "$1" = "" ] && echo "please provide the username@ip of the remote server" && exit
+
+mount_dir=/media
+umount $mount_dir/$1 2>/dev/null
+mkdir $mount_dir/$1 2>/dev/null
+
+if (( $? )) ; then
+  sshfs -o IdentityFile=~/.ssh/silverkey $1:/ $mount_dir/$1/;
+else echo "failed" && exit; fi
