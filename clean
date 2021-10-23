@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+echo "Removing unused packages(orphans) with their config"
+sudo pacman -Qtdq | sudo pacman -Rns -
+
+echo clean cache
+sudo pacman -Scc
+
+echo clean cached versions
+paccache -r
+
