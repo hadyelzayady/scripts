@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-dunstify -u critical  "Low battery" && mpv ~/.config/notification_sounds/lowbattery.mp3
+dunstify -u critical -r 100  "Low battery" && mpv ~/.config/notification_sounds/lowbattery.mp3

@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+folder=${1:-"/home/hady/shared"}
+url="https://supreme-polished-termite.ngrok-free.app"
+echo $url
+qrcode $url
+ngrok http --domain=supreme-polished-termite.ngrok-free.app  "file://$(realpath $folder)" > /dev/null
