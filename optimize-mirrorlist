@@ -1,1 +1,3 @@
+#!/bin/bash
 sudo reflector --verbose --score 200 -p http -p https --sort rate --save /etc/pacman.d/mirrorlist
+# sudo reflector --verbose  --country Egypt --country Germany --protocol https --sort rate --save /etc/pacman.d/mirrorlist
